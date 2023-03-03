@@ -1,0 +1,39 @@
+﻿@model IEnumerable<InMemory_MVC.Models.UserModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<form asp-action="Delete">
+    <button type="submit" class="btn-danger">Excluir usuário</button>
+</form>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
